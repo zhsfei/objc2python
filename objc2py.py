@@ -297,8 +297,8 @@ class SBHeaderProcessor(object):
         for child in [child for child in local_children if child.kind == CursorKind.OBJC_PROTOCOL_DECL]:
             self.emit_protocol(child)
 
-        # categories = [child for child in local_children if child.kind == CursorKind.OBJC_CATEGORY_DECL]
-        # self.gather_categories(categories)
+        categories = [child for child in local_children if child.kind == CursorKind.OBJC_CATEGORY_DECL]
+        self.gather_categories(categories)
         
         for child in [child for child in local_children if child.kind == CursorKind.OBJC_INTERFACE_DECL]:
             self.emit_protocol(child)
